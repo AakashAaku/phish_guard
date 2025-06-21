@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhishGuard Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+              <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <h1>PhishGuard Settings</h1>
+            <p>Configure your protection preferences</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Protection Settings -->
+      <section class="settings-section">
+        <h2>Protection Level</h2>
+        <p class="section-description">Choose how aggressively PhishGuard should block suspicious sites.</p>
+        
+        <div class="setting-item">
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="protectionLevel" value="permissive">
+              <div class="radio-content">
+                <div class="radio-header">
+                  <span class="radio-title">Permissive</span>
+                  <span class="radio-badge low">Low Security</span>
+                </div>
+                <p class="radio-description">Only blocks confirmed phishing sites with high confidence.</p>
+              </div>
+            </label>
+            
+            <label class="radio-option">
+              <input type="radio" name="protectionLevel" value="moderate" checked>
+              <div class="radio-content">
+                <div class="radio-header">
+                  <span class="radio-title">Moderate</span>
+                  <span class="radio-badge medium">Balanced</span>
+                </div>
+                <p class="radio-description">Blocks high and medium risk sites. Recommended for most users.</p>
+              </div>
+            </label>
+            
+            <label class="radio-option">
+              <input type="radio" name="protectionLevel" value="strict">
+              <div class="radio-content">
+                <div class="radio-header">
+                  <span class="radio-title">Strict</span>
+                  <span class="radio-badge high">Maximum Security</span>
+                </div>
+                <p class="radio-description">Blocks all suspicious activity. May cause some false positives.</p>
+              </div>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Detection Methods -->
+      <section class="settings-section">
+        <h2>Detection Methods</h2>
+        <p class="section-description">Enable or disable specific threat detection techniques.</p>
+        
+        <div class="setting-item">
+          <div class="toggle-setting">
+            <div class="toggle-info">
+              <h3>Threat Database</h3>
+              <p>Check URLs against known phishing and malware databases.</p>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="enableThreatDB" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="toggle-setting">
+            <div class="toggle-info">
+              <h3>Heuristic Analysis</h3>
+              <p>Analyze page content and URLs for suspicious patterns.</p>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="enableHeuristics" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="toggle-setting">
+            <div class="toggle-info">
+              <h3>Form Protection</h3>
+              <p>Warn when submitting sensitive data on insecure sites.</p>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="enableFormProtection" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Whitelist Management -->
+      <section class="settings-section">
+        <h2>Trusted Sites</h2>
+        <p class="section-description">Manage sites that you trust and want to exclude from scanning.</p>
+        
+        <div class="whitelist-controls">
+          <div class="input-group">
+            <input type="text" id="whitelistInput" placeholder="Enter domain (e.g., example.com)">
+            <button id="addWhitelistBtn" class="btn-primary">Add Site</button>
+          </div>
+        </div>
+
+        <div class="whitelist-container">
+          <div id="whitelistItems" class="whitelist-items">
+            <!-- Whitelist items will be populated here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistics -->
+      <section class="settings-section">
+        <h2>Protection Statistics</h2>
+        <p class="section-description">View your protection history and threat statistics.</p>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number" id="totalThreatsBlocked">0</div>
+              <div class="stat-label">Threats Blocked</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number" id="totalSitesScanned">0</div>
+              <div class="stat-label">Sites Scanned</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number" id="whitelistCount">0</div>
+              <div class="stat-label">Trusted Sites</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="resetStatsBtn" class="btn-secondary">Reset Statistics</button>
+          <button id="exportDataBtn" class="btn-primary">Export Data</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

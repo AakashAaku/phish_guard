@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Blocked - PhishGuard</title>
+  <link rel="stylesheet" href="blocked.css">
+</head>
+<body>
+  <div class="blocked-container">
+    <div class="blocked-content">
+      <!-- Header -->
+      <div class="blocked-header">
+        <div class="warning-icon">
+          <svg width="64" height="64" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+            <path d="M12 8v4m0 4h.01" stroke="white" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <h1>Phishing Site Blocked</h1>
+        <p class="subtitle">PhishGuard has blocked this potentially dangerous website</p>
+      </div>
+
+      <!-- Threat Details -->
+      <div class="threat-details" id="threatDetails">
+        <div class="detail-item">
+          <strong>Blocked URL:</strong>
+          <span id="blockedUrl" class="url-text">Loading...</span>
+        </div>
+        <div class="detail-item">
+          <strong>Threat Type:</strong>
+          <span id="threatType" class="threat-badge">Unknown</span>
+        </div>
+        <div class="detail-item">
+          <strong>Risk Level:</strong>
+          <span id="riskLevel" class="risk-badge">Unknown</span>
+        </div>
+      </div>
+
+      <!-- Warning Message -->
+      <div class="warning-message">
+        <h3>Why was this site blocked?</h3>
+        <ul id="threatReasons">
+          <li>This site may be attempting to steal your personal information</li>
+          <li>The URL or content matches known phishing patterns</li>
+          <li>The site may impersonate a legitimate service</li>
+        </ul>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button id="goBackBtn" class="btn-primary">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 12H5m7-7-7 7 7 7"/>
+          </svg>
+          Go Back to Safety
+        </button>
+        
+        <div class="secondary-actions">
+          <button id="reportBtn" class="btn-secondary">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M3 3v18l18-9L3 3z"/>
+            </svg>
+            Report False Positive
+          </button>
+          
+          <button id="continueBtn" class="btn-danger">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+            </svg>
+            Continue Anyway (Not Recommended)
+          </button>
+        </div>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="additional-info">
+        <h4>How to stay safe online:</h4>
+        <ul class="safety-tips">
+          <li>Always verify URLs before entering sensitive information</li>
+          <li>Look for HTTPS and valid security certificates</li>
+          <li>Be cautious of urgent or threatening messages</li>
+          <li>Never download software from untrusted sources</li>
+        </ul>
+      </div>
+
+      <!-- Footer -->
+      <div class="blocked-footer">
+        <div class="phishguard-branding">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+          </svg>
+          <span>Protected by PhishGuard</span>
+        </div>
+        <div class="help-links">
+          <a href="#" id="helpBtn">Help</a>
+          <a href="#" id="settingsBtn">Settings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="blocked.js"></script>
+</body>
+</html>

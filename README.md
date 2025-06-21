@@ -36,7 +36,7 @@ PhishGuard is a sophisticated browser extension that provides real-time protecti
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/AakashAaku/phish_guard.git
    cd phishguard-extension
    ```
 
@@ -304,7 +304,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Issues**: [GitHub Issues](https://github.com/your-repo/issues)
 - **Documentation**: [Wiki](https://github.com/your-repo/wiki)
-- **Email**: support@phishguard.com
+- **Email**: contact@guragaiaakash.com.np
 
 ## 🔄 Changelog
 
